@@ -1,0 +1,11 @@
+.description{
+    display: flex;
+    line-height: 80px;
+    
+}
+.description img {
+    padding-right: 40px;
+}
+.mission{
+    padding-right: 40px;
+}
