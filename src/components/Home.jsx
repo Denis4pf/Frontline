@@ -1,7 +1,7 @@
 import React from 'react'
 import '../components/Home.css'
 
-export default function Home() {
+ function Home() {
     return (
         <section>
             <div className="welcome-msg">
@@ -19,3 +19,4 @@ export default function Home() {
         </section>
     )
 }
+export default Home;
