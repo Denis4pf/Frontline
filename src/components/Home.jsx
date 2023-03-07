@@ -11,7 +11,7 @@ import '../components/Home.css'
                 <p>
                     Our team is glad to offer the experience in <br /> cusomer care 24/7.
                 </p>
-                <button>
+                <button type="discover" className="btn-submit">
                 Discover more
             </button>
             </div>
