@@ -47,7 +47,7 @@ body{
   }
   
   .btn-submit {
-    margin-left: 20%;
+    margin-left: 2%;
     padding: 10px;
     font-size: 16px;
     color: #fff;
@@ -55,6 +55,7 @@ body{
     border: none;
     border-radius: 3px;
     cursor: pointer;
+
   }
   
   .btn-submit:hover {

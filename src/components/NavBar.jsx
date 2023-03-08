@@ -18,6 +18,7 @@ function NavBar() {
                 <li><Link to="/blogs">Blog</Link></li>
                 <li><Link to="/projects">Projects</Link></li>
                 <li><Link to="/contact">Contact Us</Link></li>
+                <li><Link to="/login">Login</Link></li>
 
             </ul>
             <Outlet />
