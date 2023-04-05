@@ -143,7 +143,7 @@ const Blog = () => {
 
   return (
     <div className="blog-container">
-      <h1>Welcome to our Blog!</h1>
+      <h2>Welcome to our Blog!</h2>
       <div className="post-form">
         <h2>Write a New Post:</h2>
         <input type="text" placeholder="Title" value={title} onChange={handleTitleChange} />

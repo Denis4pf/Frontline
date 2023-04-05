@@ -13,7 +13,25 @@ function SignupForm({ handleClick, onLogin }) {
     e.preventDefault();
     setErrors([]);
     setIsLoading(true);
+    // Validate checks
+    if (!name || !email || !password || !passwordConfirmation) {
+      setErrors([...errors, 'Please fill in all fields.']);
+      setIsLoading(false);
+      return;
+    }
+    if (password !== passwordConfirmation){
+      setErrors([...errors, 'Passwords do not match.']);
+      setIsLoading(false);
+      return;
+    }
 
+    // Submit the form data
+    const userData = {
+      name,
+      email,
+      password,
+    };
+    onLogin(userData);
   }
 
   return (

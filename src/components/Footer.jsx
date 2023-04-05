@@ -1,7 +1,7 @@
 import React from 'react'
 import '../components/Footer.css'
 
-export default function Footer() {
+export default function Footer({handleClick}) {
     return (
         <div className="footer">
             <div className="footer-details">
@@ -18,8 +18,9 @@ export default function Footer() {
                 <div>
                     <h2>Features</h2>
                     <p>Company</p>
-                    <p>Blog</p>
-                    <p>Contact Us</p>
+                    <p> <a href="blogs" onClick={handleClick}>Blog</a></p>
+                    <p> <a href="contact" onClick={handleClick}>Contact Us</a></p>
+                    
                 </div>
             </div>
             <div className="copyright">

@@ -13,6 +13,7 @@ function NavBar() {
 
             <img src="./images/frontline" alt="" />
             <ul>
+                <li><Link to="/home">HOME</Link></li>
                 <li><Link to="/about">About</Link></li>
                 <li><Link to="/services">Services</Link></li>
                 <li><Link to="/blogs">Blog</Link></li>

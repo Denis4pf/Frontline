@@ -9,6 +9,9 @@ import Services from './components/Services';
 import Blog from './components/Blog';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import Project from './components/Project';
+import AdminPage from './components/AdminPage';
+import AnalyticCharts from './components/AnalyticCharts'
 // import { Signup, Login } from './components/Auth';
 // import AdminPanel from './AdminPanel';
 
@@ -23,12 +26,17 @@ function App() {
           <Route />
           <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/" element={<AdminPage />} />
       {/* <PrivateRoute path="/admin" component={AdminPanel} isLoggedIn={isLoggedIn} /> */}
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path='/blogs' element={<Blog />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/services' element={<Services />} />
+          {/* <Route path='/charts' element={<AnalyticCharts />} /> */}
+          <Route path='/projects' element={<Project />} />
+
+        
 
         </Routes>
         <Footer/>

@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 function Login({handleClick}) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [errors ] = useState('');
+  const [error, setError ] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   // handle email and password change
   const handleEmailChange = (event) => {
@@ -13,17 +14,34 @@ function Login({handleClick}) {
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
-  const [isLoading ] = useState(false);
+  
   // handle form submission
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // check if the entered credentials are correct
-    if (email === 'admin' && password === 'admin') {
+    setIsLoading(true);
+   try{
+    //send request to server check the credentials
+    const response = await fetch('/api/login',{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email,
+        password
+      })
+    });
+    const data = await response.json();
+    if (response.ok) {
       // redirect to the admin panel
-      window.location.href = '/';
+      window.location.href ='/';
     } else {
-      alert('Invalid credentials');
+      setError(data.message);
     }
+   } catch (error) {
+    setError('An error occurred while logging in.');
+   }
+   setIsLoading(false);
   };
 
   return (
@@ -39,11 +57,9 @@ function Login({handleClick}) {
             <label htmlFor="password">Password</label>
             <input type="password" id="password" name="password" value={password} onChange={handlePasswordChange} />
         </div>
-        {errors.length > 0 && (
+        {error && (
             <div className='input-control' style={{ color: "red" }}>
-                {errors.map((error) => (
-                    <p key={error}>{error}</p>
-                ))}
+                    <p>{error}</p>
             </div>
         )}
         <button type="submit" disabled={isLoading ? 'true' : ""}>{isLoading ? "Logging in..." : "Login"}</button>
